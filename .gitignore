@@ -1,0 +1,16 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# Generated
+generate_icon.swift
+
+# OS
+.DS_Store
