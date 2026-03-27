@@ -9,6 +9,7 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     DEVELOPMENT_TEAM: "8957296QYR"
+    CODE_SIGN_STYLE: Automatic
 
 packages:
   WhisperKit:
@@ -30,16 +31,27 @@ targets:
       base:
         INFOPLIST_FILE: Sources/Murmur/Info.plist
         CODE_SIGN_ENTITLEMENTS: Sources/Murmur/Murmur.entitlements
-        PRODUCT_BUNDLE_IDENTIFIER: com.murmur.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.murmurkeyboard.app
+        TARGETED_DEVICE_FAMILY: "1"
     info:
       path: Sources/Murmur/Info.plist
       properties:
+        CFBundleIconName: AppIcon
         CFBundleURLTypes:
-          - CFBundleURLName: com.murmur.app
+          - CFBundleURLName: com.murmurkeyboard.app
             CFBundleURLSchemes:
               - murmur
         NSMicrophoneUsageDescription: "Murmur needs microphone access to transcribe your speech on-device."
         UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
 
   MurmurKeyboard:
     type: app-extension
@@ -51,7 +63,7 @@ targets:
       base:
         INFOPLIST_FILE: Sources/MurmurKeyboard/Info.plist
         CODE_SIGN_ENTITLEMENTS: Sources/MurmurKeyboard/MurmurKeyboard.entitlements
-        PRODUCT_BUNDLE_IDENTIFIER: com.murmur.app.keyboard
+        PRODUCT_BUNDLE_IDENTIFIER: com.murmurkeyboard.app.keyboard
     info:
       path: Sources/MurmurKeyboard/Info.plist
       properties:

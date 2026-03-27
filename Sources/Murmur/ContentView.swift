@@ -351,7 +351,7 @@ struct ContentView: View {
         // UITextInputMode.activeInputModes lists all enabled keyboards.
         // If our keyboard bundle ID appears, it's enabled.
         let enabled = UITextInputMode.activeInputModes.contains { mode in
-            mode.value(forKey: "identifier") as? String == "com.murmur.app.keyboard"
+            mode.value(forKey: "identifier") as? String == "com.murmurkeyboard.app.keyboard"
         }
         withAnimation {
             keyboardIsEnabled = enabled
